@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API con sesiones - Practica 2</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main class="tarjeta">
+        <header class="encabezado">
+            <div>
+                <h1>API CON SESIONES</h1>
+            </div>
+        </header>
+
+        <!-- ============ LOGIN ============ -->
+        <section class="bloque" id="bloqueLogin">
+            <h2>Iniciar sesion</h2>
+
+            <form id="formLogin" class="formulario" novalidate>
+                <div class="campo">
+                    <label for="correo">Correo *</label>
+                    <input type="email" id="correo" name="correo" placeholder="arturo@ceti.mx">
+                </div>
+
+                <div class="campo">
+                    <label for="password">Contrasena *</label>
+                    <input type="password" id="password" name="password" placeholder="12345">
+                </div>
+
+                <div class="campo ancho-completo botones">
+                    <button type="submit" class="btn btn-primario">Entrar</button>
+                </div>
+            </form>
+
+            <p id="mensajeLogin" class="mensaje oculto" role="status" aria-live="polite"></p>
+
+            <p class="ayuda">
+                Usuarios de prueba: <code>arturo@ceti.mx / 12345</code> &middot;
+                <code>alumno@ceti.mx / demo123</code>
+            </p>
+        </section>
+
+        <!-- ============ SESION ACTIVA ============ -->
+        <section class="bloque oculto" id="bloqueSesion">
+            <h2>Sesion activa</h2>
+            <p id="saludo" class="saludo"></p>
+
+            <div class="botones">
+                <button type="button" id="btnPerfil" class="btn btn-primario">Consultar perfil</button>
+                <button type="button" id="btnLogout" class="btn btn-peligro">Cerrar sesion</button>
+            </div>
+
+            <!-- Aqui se escriben los datos que devuelve GET /perfil -->
+            <dl id="datosPerfil" class="perfil oculto">
+                <div><dt>Id</dt>              <dd id="perfilId"></dd></div>
+                <div><dt>Nombre</dt>          <dd id="perfilNombre"></dd></div>
+                <div><dt>Correo</dt>          <dd id="perfilCorreo"></dd></div>
+                <div><dt>Fecha de registro</dt><dd id="perfilFecha"></dd></div>
+            </dl>
+        </section>
+
+        <!-- ============ ESTADO (solo se ve con la sesion iniciada) ============ -->
+        <section class="bloque oculto" id="bloqueEstado">
+            <div class="barra">
+                <h2>Estado de la sesion</h2>
+                <button type="button" id="btnEstado" class="btn btn-secundario btn-mini">Actualizar</button>
+            </div>
+            <p id="estado" class="estado"></p>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

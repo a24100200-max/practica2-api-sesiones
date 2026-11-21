@@ -1,0 +1,8 @@
+# Dependencias (se reinstalan con: npm install)
+node_modules/
+
+# Credenciales de la base de datos y llave de la sesion
+.env
+
+# Archivos del sistema
+.DS_Store

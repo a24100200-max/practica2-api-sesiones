@@ -1,0 +1,130 @@
+/* ============================================================
+   Practica 2 - API con sesiones
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 32px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef1f0;
+    color: #22312f;
+}
+
+.tarjeta {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #c3cecb;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+    overflow: hidden;
+}
+
+/* Encabezado */
+.encabezado {
+    background: #1f4e5f;
+    color: #f4f7f5;
+    padding: 18px 22px;
+}
+
+.encabezado h1 { margin: 0; font-size: 1.35rem; letter-spacing: .5px; }
+.subtitulo-encabezado { margin: 4px 0 0; font-size: .88rem; color: #bcd4d9; }
+
+/* Bloques */
+.bloque { padding: 20px 22px; border-bottom: 1px solid #dde4e2; }
+.bloque:last-of-type { border-bottom: none; }
+.bloque h2 { margin: 0 0 14px; font-size: 1.05rem; color: #1f4e5f; }
+
+.barra {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-bottom: 12px;
+}
+.barra h2 { margin: 0; }
+
+/* Formulario */
+.formulario { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+.campo { display: flex; flex-direction: column; gap: 6px; }
+.ancho-completo { grid-column: 1 / -1; }
+
+label { font-weight: bold; font-size: .9rem; }
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; padding: 9px; font-size: 1rem; font-family: inherit;
+    border: 1px solid #a8b6b3; border-radius: 4px; background: #fbfcfc;
+    color: inherit;
+}
+
+input:focus { outline: 2px solid #1f4e5f; outline-offset: 1px; }
+
+/* Botones */
+.botones {
+    display: flex; flex-direction: row; flex-wrap: wrap;
+    gap: 10px; align-items: flex-start;
+}
+
+.btn {
+    padding: 10px 18px; font-size: .95rem; font-family: inherit; font-weight: bold;
+    border: 1px solid transparent; border-radius: 4px; cursor: pointer;
+}
+
+.btn-primario   { background: #1f4e5f; color: #f4f7f5; }
+.btn-primario:hover { background: #173c49; }
+.btn-secundario { background: #e8eceb; color: #22312f; border-color: #a8b6b3; }
+.btn-secundario:hover { background: #d8dfdd; }
+.btn-peligro    { background: #b3473a; color: #fff; }
+.btn-peligro:hover { background: #9a392e; }
+.btn-mini       { padding: 6px 12px; font-size: .82rem; }
+
+/* Mensaje de error del login */
+.mensaje {
+    margin: 16px 0 0; padding: 11px 14px; border-radius: 4px;
+    border-left: 5px solid; font-size: .92rem;
+}
+.mensaje-error { background: #fdf1ef; border-color: #b3473a; color: #7d2b22; }
+
+/* Textos */
+.ayuda { font-size: .82rem; color: #5c6b68; margin: 14px 0 0; }
+.ayuda-arriba { font-size: .82rem; color: #5c6b68; margin: -6px 0 12px; }
+.ayuda code {
+    background: #e8eceb; padding: 2px 5px; border-radius: 3px;
+    font-family: Consolas, Menlo, monospace;
+}
+
+.saludo { margin: 0 0 14px; font-size: 1rem; }
+
+/* Datos que devuelve /perfil */
+.perfil {
+    margin: 18px 0 0; padding: 14px 16px;
+    background: #f6f9f8; border: 1px solid #dde4e2; border-radius: 4px;
+}
+.perfil > div {
+    display: flex; gap: 10px; padding: 5px 0;
+    border-bottom: 1px dashed #dde4e2;
+}
+.perfil > div:last-child { border-bottom: none; }
+.perfil dt { font-weight: bold; min-width: 150px; font-size: .9rem; }
+.perfil dd { margin: 0; font-size: .9rem; }
+
+/* Estado de la sesion */
+.estado {
+    margin: 0; padding: 11px 14px; border-radius: 4px;
+    border-left: 5px solid; font-size: .92rem;
+}
+.estado-activa   { background: #eef7f1; border-color: #2e8b57; color: #1d5c39; }
+.estado-inactiva { background: #f3f5f4; border-color: #8a9693; color: #4c5956; }
+
+.oculto { display: none !important; }
+
+/* Pie */
+.pie {
+    padding: 14px 22px; background: #e8eceb; color: #5c6b68;
+    font-size: .8rem; text-align: center;
+}
+
+@media (max-width: 700px) {
+    .formulario { grid-template-columns: 1fr; }
+    .perfil > div { flex-direction: column; gap: 2px; }
+}
